@@ -7,23 +7,31 @@
 let biciCorsaArray = [
     { nome: "Mountain Bike", peso: 6.5 },
     { nome: "Ibrida", peso: 8.0 },
-    { nome: "Cicloturismo", peso: 6.81}
+    { nome: "Cicloturismo", peso: 6.81 }
 ]
 
 console.log(biciCorsaArray);
 
-var pesoMinimo = 999;
+// inizializzo peso e nome con la prima dell'array
+var pesoMinimo = biciCorsaArray[0].peso;
+var biciMinimo = biciCorsaArray[0].nome;
 
 // scorriamo l'array e salviamo la bici con peso minore (utilizzando destructuring e template literal)
-for (var i = 0; i < biciCorsaArray.length; i++) {
-    var { peso } = biciCorsaArray[i];
+for (let i = 0; i < biciCorsaArray.length; i++) {
+    var { nome, peso } = biciCorsaArray[i];
 
     if (peso < pesoMinimo) {
+        
         pesoMinimo = peso;
+
     }
 
-    console.log(peso);
 }
 
+// stampa con il template literal 
+// console.log(`la ${nome} è il tipo di bicicletta con il peso minore di ${peso}`)
+console.log(`la tipologia ${biciMinimo} con il peso di ${pesoMinimo}kg è la bici più leggera`);
 
 
+// NOTE
+// e se ho due bici con lo stesso peso?
